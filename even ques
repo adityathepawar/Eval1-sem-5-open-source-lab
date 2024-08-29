@@ -1,0 +1,67 @@
+students = []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+def mark_present(student_name: str):
+    if student_name not in students:
+        students.append(student_name)
+        print(f"{student_name} has been marked present.")
+    else:
+        print(f"{student_name} is already marked present.")
+
+def remove_student(student_name: str):
+    if student_name in students:
+        students.remove(student_name)
+        print(f"{student_name} has been removed from the attendance list.")
+    else:
+        print(f"{student_name} is not in the attendance list.")
+
+def is_present(student_name: str) -> bool:
+    return student_name in students
+
+def display_attendance():
+    print("Students present:")
+    if not students:
+        print("No students are present.")
+    else:
+        for student in students:
+            print("- " + student)
+n = int(input("enter the number of students: " ))
+
+for i in range(1,n+1):
+    a = input("enter the name: ")
+    mark_present(a)
+
+m = int(input("enter the number of students you want to remove: "))
+
+for i in range(1,m+1):
+    b = input("enter the name you want to remove: ")
+    remove_student(b)
+display_attendance()
+
+
+display_attendance()
+
+x = int(input("enter the total number of student you wanna check are present or not: "))
+
+for i in range(1,x+1):
+    v = input("enter the name you wanna check is present or not: ")
+    print(f"Checking if {v} is present:", is_present(v))
+    is_present(v)
+
+
+
+
